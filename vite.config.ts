@@ -21,14 +21,16 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'icon-192x192.png',
+            src: 'maskable_icon_x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: "any maskable"
           },
           {
-            src: 'icon-512x512.png',
+            src: 'maskable_icon.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: "any maskable"
           }
         ]
       }
