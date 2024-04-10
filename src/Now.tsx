@@ -15,19 +15,19 @@ export const Now: React.FC<{}> = ({}) => {
 
   const [now, setNow] = useState(new Date())
   useEffect(() => {
-    // let timeoutId
+    let timeoutId: number
     const updateNow = () => {
       setNow(new Date())
-      setTimeout(updateNow, 1000)
+      timeoutId = setTimeout(updateNow, 1000)
     }
     updateNow()
-    // return () => {
-    //   clearTimeout(timeoutId)
-    // }
+    return () => {
+      clearTimeout(timeoutId)
+    }
   }, [])
 
   return (
-    <div id="now" className="w-full  m-0 p-0">
+    <div id="now" className="w-full select-none m-0 p-0">
       <div className="mt-8">
         <div className="date" style={{ fontSize: "6vmin" }}>
           {_format(now, "yyyy/MM/dd eee")}
