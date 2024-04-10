@@ -18,19 +18,19 @@ export default defineConfig({
         name: 'nimachi',
         short_name: 'nimachi',
         description: 'My Awesome App description',
-        theme_color: '#ffffff',
+        theme_color: '#000000',
         icons: [
           {
             src: 'maskable_icon_x192.png',
             sizes: '192x192',
             type: 'image/png',
-            purpose: "any maskable"
+            purpose: "maskable"
           },
           {
             src: 'maskable_icon.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: "any maskable"
+            purpose: "maskable"
           }
         ]
       }
