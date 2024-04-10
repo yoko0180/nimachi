@@ -5,7 +5,7 @@ import { Now } from "./Now"
 
 
 function App() {
-  const [inputValue, setInputValue] = useState("147")
+  const [inputValue, setInputValue] = useState("")
   const [busu, setBusu] = useState(60)
   const [lock, setLock] = useState(false)
 
