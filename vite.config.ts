@@ -24,13 +24,13 @@ export default defineConfig({
             src: 'maskable_icon_x192.png',
             sizes: '192x192',
             type: 'image/png',
-            purpose: "maskable"
+            purpose: "any maskable"
           },
           {
             src: 'maskable_icon.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: "maskable"
+            purpose: "any maskable"
           }
         ]
       }
