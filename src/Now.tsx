@@ -28,7 +28,7 @@ export const Now: React.FC<{}> = ({}) => {
 
   return (
     <div id="now" className="w-full select-none m-0 p-0">
-      <div className="mt-8">
+      <div className="">
         <div className="date" style={{ fontSize: "6vmin" }}>
           {_format(now, "yyyy/MM/dd eee")}
         </div>

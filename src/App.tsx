@@ -2,16 +2,16 @@ import { useState } from "react"
 import "./App.css"
 import pkg from "../package.json"
 import { Now } from "./Now"
+import Honsu from "./Honsu"
 
 
 function App() {
-  const [inputValue, setInputValue] = useState("")
   const [busu, setBusu] = useState(60)
   const [lock, setLock] = useState(false)
 
   return (
     <div className="m-5">
-      <div>
+      <div className="text-right">
         <span>ver {pkg.version}</span>
       </div>
       {/* <h1 className="text-4xl m-8">nimachi</h1> */}
@@ -47,42 +47,14 @@ function App() {
       <div className="divider"></div>
 
       <div>本数</div>
-      <div
-        className={"hero min-h-24 bg-base-200" + (lock ? " border-4 border-yellow-500" : "")}
-        onClick={() => !lock &&
-          (
-            document.getElementById("my_modal_1") as HTMLDialogElement
-          )?.showModal()
-        }
-      >
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-7xl font-bold select-none">{inputValue}</h1>
-          </div>
-        </div>
+      <div className="flex flex-col justify-items-center space-y-2">
+        <Honsu id="1" lock={lock} />
+        <Honsu id="2" lock={lock} />
+        <Honsu id="3" lock={lock} />
+        <Honsu id="4" lock={lock} />
+        <Honsu id="5" lock={lock} />
       </div>
 
-
-      {/* 本数編集ダイアログ */}
-      <dialog id="my_modal_1" className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">本数</h3>
-          <input
-            type="number"
-            placeholder="Type here"
-            className="input input-bordered w-full max-w-xs"
-            onChange={(e) => setInputValue(e.target.value)}
-            value={inputValue}
-          />
-
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
 
       {/* ロックトグル */}
       <div className="form-control">
