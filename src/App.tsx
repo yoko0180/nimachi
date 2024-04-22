@@ -30,6 +30,7 @@ function App() {
           }
         >
           60
+          <p className="text-sm">３４～４０頁</p>
         </div>
         <div className="divider divider-horizontal">OR</div>
         <div
@@ -41,6 +42,7 @@ function App() {
           }
         >
           80
+          <p className="text-sm">２４～３２頁</p>
         </div>
       </div>
 
