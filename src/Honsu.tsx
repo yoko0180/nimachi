@@ -1,7 +1,13 @@
-import { useState } from "react"
+import { useAtom, type WritableAtom } from "jotai"
 
-function Honsu({id, lock}: {id: string, lock: boolean}) {
-  const [inputValue, setInputValue] = useState("")
+interface HonsuProps {
+  id: string;
+  lock: boolean;
+  atom: WritableAtom<string, [string], void>;
+}
+
+function Honsu({id, lock, atom}: HonsuProps) {
+  const [inputValue, setInputValue] = useAtom(atom)
 
   return (
     <div className="">
@@ -34,11 +40,11 @@ function Honsu({id, lock}: {id: string, lock: boolean}) {
           />
 
           <div className="modal-action">
-            <button className="btn" onClick={() => setInputValue("")}>Clear</button>
+            <button type="button" className="btn" onClick={() => setInputValue("")}>Clear</button>
 
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn">OK</button>
+              <button type="submit" className="btn">OK</button>
             </form>
           </div>
         </div>

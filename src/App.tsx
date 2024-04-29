@@ -3,10 +3,20 @@ import "./App.css"
 import pkg from "../package.json"
 import { Now } from "./Now"
 import Honsu from "./Honsu"
+import { atomWithStorage } from "jotai/utils"
+import { useAtom } from "jotai"
+
+export const busuState = atomWithStorage<number>("busu", 60)
+export const honsu1State = atomWithStorage<string>("honsu1", "")
+export const honsu2State = atomWithStorage<string>("honsu2", "")
+export const honsu3State = atomWithStorage<string>("honsu3", "")
+export const honsu4State = atomWithStorage<string>("honsu4", "")
+export const honsu5State = atomWithStorage<string>("honsu5", "")
 
 
 function App() {
-  const [busu, setBusu] = useState(60)
+  const [busu, setBusu] = useAtom(busuState)
+  // const [honsu1, setHonsu1] = useAtom(honsu1State)
   const [lock, setLock] = useState(false)
 
   return (
@@ -50,11 +60,12 @@ function App() {
 
       <div>本数</div>
       <div className="flex flex-col justify-items-center space-y-2">
-        <Honsu id="1" lock={lock} />
-        <Honsu id="2" lock={lock} />
-        <Honsu id="3" lock={lock} />
-        <Honsu id="4" lock={lock} />
-        <Honsu id="5" lock={lock} />
+        <Honsu id="1" lock={lock} atom={honsu1State}/>
+        <Honsu id="2" lock={lock} atom={honsu2State}/>
+        <Honsu id="3" lock={lock} atom={honsu3State}/>
+        <Honsu id="4" lock={lock} atom={honsu4State}/>
+        <Honsu id="5" lock={lock} atom={honsu5State}/>
+
       </div>
 
 
