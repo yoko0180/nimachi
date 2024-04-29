@@ -24,8 +24,8 @@ function App() {
         <div
           onClick={() => !lock && setBusu(60)}
           className={
-            (busu == 60 ? "text-5xl " : "") +
-            (lock && busu == 60 ? "border-4 border-yellow-500 " : "") +
+            (busu === 60 ? "text-5xl " : "") +
+            (lock && busu === 60 ? "border-4 border-yellow-500 " : "") +
             "grid h-20 flex-grow card bg-base-300 rounded-box place-items-center select-none"
           }
         >
@@ -36,8 +36,8 @@ function App() {
         <div
           onClick={() => !lock && setBusu(80)}
           className={
-            (busu == 80 ? "text-5xl " : "") +
-            (lock && busu == 80 ? "border-4 border-yellow-500 " : "") +
+            (busu === 80 ? "text-5xl " : "") +
+            (lock && busu === 80 ? "border-4 border-yellow-500 " : "") +
             "grid h-20 flex-grow card bg-base-300 rounded-box place-items-center select-none"
           }
         >
@@ -46,7 +46,7 @@ function App() {
         </div>
       </div>
 
-      <div className="divider"></div>
+      <div className="divider" />
 
       <div>本数</div>
       <div className="flex flex-col justify-items-center space-y-2">
